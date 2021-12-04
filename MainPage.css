@@ -1,0 +1,114 @@
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1f2d3d;
+  }
+  
+  body {
+    background-color: #F2F2CE;
+  }
+
+
+  /*타이틀*/
+  .Title{ /*타이틀 사이즈 및 위치 조정*/
+    text-align: center;
+    padding:10px 200px;
+    margin-right: 30px;
+    font-size: 100px;
+    color: #60735F;
+  }
+
+ /*로그인 버튼*/
+ .Login-button {/*위치조정 및 디자인*/
+  top: 100%;
+  right: 0;
+  width: 100px;
+  padding: 8px 0;
+  border: 0px;
+  outline: none;
+  text-align: center;
+  background-color: #B8CC7A;
+  color: white;
+  box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15);
+  transition: transform 200ms ease-in;
+  
+}
+
+.Login{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+  
+.Login:hover {/*마우스 올렸을 때 색변화*/
+  opacity: 0.75;
+}
+
+
+.searchbox{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.search{
+  font-size: 16px;
+  width: 600px;
+  height: 50px;
+  padding: 10px;
+  border: 0px;
+  outline: none;
+  float: left;
+}
+.search_button{
+  background-color:#8C8988;
+  color: #F2F0F0;
+  width: 70px;
+  height: 50px;
+  border: 0px;
+  outline: none;
+
+}
+
+.statics{
+  position: relative;
+  margin: auto;
+  background-color: #ADCC99;
+  color: black;
+  width: 800px;
+  height: 500px;
+}
+
+#chart1{
+  width: 750px ;
+  height: 500px;
+}
+
+/*반응형으로 만들기*/
+@media  (max-width:500px) {
+  .searchbox{
+    width: 400px;
+
+  }
+  .statics{
+    display: none;
+  }
+
+  .Title{ /*타이틀 사이즈 및 위치 조정*/
+    font-size: 50px;
+
+  }
+  .Login-button {/*위치조정 및 디자인*/
+    top: 100%;
+    right: 0;
+    width: 50px;
+  }
+}
