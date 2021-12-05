@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `district_facility`
+-- Table structure for table `bookmark`
 --
 
-DROP TABLE IF EXISTS `district_facility`;
+DROP TABLE IF EXISTS `bookmark`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `district_facility` (
-  `district_name` varchar(20) NOT NULL,
-  `district_code` int(11) NOT NULL,
-  `WC_charge` int(11) NOT NULL,
-  `overpass` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`district_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `bookmark` (
+  `id_code` int(11) NOT NULL AUTO_INCREMENT,
+  `facility_name` varchar(45) NOT NULL,
+  `facility_code` int(11) NOT NULL,
+  PRIMARY KEY (`id_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `district_facility`
+-- Dumping data for table `bookmark`
 --
 
-LOCK TABLES `district_facility` WRITE;
-/*!40000 ALTER TABLE `district_facility` DISABLE KEYS */;
-INSERT INTO `district_facility` VALUES ('종로구',11110,12,3),('중구',11140,9,2),('용산구',11170,16,13),('성동구',11200,19,4),('광진구',11215,10,0),('동대문구',11230,19,0),('중랑구',11260,28,0),('성북구',11290,14,0),('강북구',11305,27,1),('도봉구',11320,28,0),('노원구',11350,42,6),('은평구',11380,22,0),('서대문구',11410,27,7),('마포구',11440,5,0),('양천구',11470,15,15),('강서구',11500,33,4),('구로구',11530,15,9),('금천구',11545,13,0),('영등포구',11560,35,7),('동작구',11590,4,0),('관악구',11620,34,8),('서초구',11650,23,17),('강남구',11680,25,8),('송파구',11710,27,2),('강동구',11740,13,9);
-/*!40000 ALTER TABLE `district_facility` ENABLE KEYS */;
+LOCK TABLES `bookmark` WRITE;
+/*!40000 ALTER TABLE `bookmark` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bookmark` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-05 16:27:57
+-- Dump completed on 2021-12-05 16:27:55

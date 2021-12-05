@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: path
+-- Host: localhost    Database: project
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 
@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `lift`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lift` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `S_id` int(11) NOT NULL AUTO_INCREMENT,
   `S_line` varchar(255) DEFAULT NULL,
   `S_name` varchar(255) DEFAULT NULL,
   `enter_num` int(11) DEFAULT NULL,
   `S_position` varchar(255) DEFAULT NULL,
   `start_floor` varchar(255) DEFAULT NULL,
   `end_floor` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`S_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=euckr;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 17:45:28
+-- Dump completed on 2021-12-05 16:27:56
