@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: path
+-- Host: localhost    Database: project
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,18 +21,18 @@
 
 DROP TABLE IF EXISTS `wc_conv_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wc_conv_info` (
-  `WC_number` int NOT NULL,
+  `WC_number` int(11) NOT NULL,
   `WC_name` varchar(20) NOT NULL,
   `WC_address` text NOT NULL,
   `Explanation` text NOT NULL,
-  `District_Name` varchar(20) NOT NULL,
-  `District_Code` int NOT NULL,
+  `district_name` varchar(20) NOT NULL,
+  `district_code` int(11) NOT NULL,
   PRIMARY KEY (`WC_number`),
-  KEY `fk_district_code_idx` (`District_Code`),
-  CONSTRAINT `wc_conv_info_ibfk_1` FOREIGN KEY (`District_Code`) REFERENCES `district_facility` (`district_code`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `fk_district_code_idx` (`district_code`),
+  CONSTRAINT `wc_conv_info_ibfk_1` FOREIGN KEY (`district_code`) REFERENCES `district_facility` (`district_code`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 19:16:00
+-- Dump completed on 2021-12-05 16:27:56

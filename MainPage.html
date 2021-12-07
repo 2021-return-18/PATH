@@ -8,17 +8,115 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-<div class="top">
+    <div class="top">
 
-    <div class="Title">
-       PATH
+        <div class="Title">
+        PATH
+        </div>
+        <div class="Login">
+            <button type="button" aria-label="Login" class="Login-button">
+                Login
+            </button>
+        </div>
     </div>
-    <div class="Login">
-        <button type="button" aria-label="Login" class="Login-button">
-            Login
-        </button>
+    <!--사이드바-->
+    <div id="location">
+        <ul class="loc_Capital">
+            <div class="nav__brand">
+                <ion-icon name="albums-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    구별 검색
+            </div>
+
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㄱ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">강동구</a></li>
+                        <li><a href="#" class="collapse__sublink">광진구</a></li>
+                        <li> <a href="#" class="collapse__sublink">강북구</a></li>
+                        <li><a href="#" class="collapse__sublink">강서구</a></li>
+                        <li><a href="#" class="collapse__sublink">구로구</a></li>
+                        <li><a href="#" class="collapse__sublink">금천구</a></li>
+                        <li><a href="#" class="collapse__sublink">관약구</a></li>
+                        <li><a href="#" class="collapse__sublink">강남구</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㄴ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">노원구</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㄷ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">동대문구</a></li>
+                        <li><a href="#" class="collapse__sublink">도봉구</a></li>
+                        <li><a href="#" class="collapse__sublink">동작구</a></li>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㅁ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">마포구</a></li>
+
+                    </ul>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㅅ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">송파구</a></li>
+                        <li><a href="#" class="collapse__sublink">서초구</a></li>
+                        <li><a href="#" class="collapse__sublink">서대문구</a></li>
+                        <li><a href="#" class="collapse__sublink">성북구</a></li>
+                        <li><a href="#" class="collapse__sublink">성동구</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㅇ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">용산구</a></li>
+                        <li><a href="#" class="collapse__sublink">은평구</a></li>
+                        <li> <a href="#" class="collapse__sublink">양천구</a></li>
+                        <li><a href="#" class="collapse__sublink">영등포구</a></li>
+                    </ul>
+                </li>
+            </div>
+            <div class="loc_link collapse">
+                <li>
+                    <ion-icon name="reorder-three-outline" class="loc__icon"></ion-icon>
+                    <span class="loc_name">ㅈ</span>
+                    <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                    <ul class="ku">
+                        <li><a href="#" class="collapse__sublink">중랑구</a></li>
+                        <li><a href="#" class="collapse__sublink">중구구</a></li>
+                        <li><a href="#" class="collapse__sublink">종로구</a></li>
+                    </ul>
+                </li>
+            </div>
     </div>
-  </div>
+
 
 
     <div class="searchbox">
@@ -30,7 +128,11 @@
     <div class=statics>
     <canvas id="chart1"  ></canvas>
     </div>
-    <script src="./MainPage.js"></script>
+
+<!-- IONICONS -->
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+<!-- JS -->
+<script src="./MainPage.js"></script>
 </body>
 
 

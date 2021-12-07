@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: path
+-- Host: localhost    Database: project
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 
@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `overpass`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `overpass` (
-  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `O_num` int(11) NOT NULL AUTO_INCREMENT,
   `O_name` varchar(255) DEFAULT NULL,
   `O_address` varchar(255) DEFAULT NULL,
   `convenience_sort` varchar(255) DEFAULT NULL,
   `convenience_num` int(11) DEFAULT NULL,
-  PRIMARY KEY (`num`)
+  PRIMARY KEY (`O_num`)
 ) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=euckr;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 17:45:28
+-- Dump completed on 2021-12-05 16:27:55

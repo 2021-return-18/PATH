@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: path
+-- Host: localhost    Database: project
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 
@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `ID` varchar(255) NOT NULL,
-  `Name` varchar(255) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `Ku` varchar(255) NOT NULL,
+  `user_district` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=euckr;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 17:45:28
+-- Dump completed on 2021-12-05 16:27:57
