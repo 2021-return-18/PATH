@@ -1,11 +1,7 @@
 /* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
+
   html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
       "Helvetica Neue", sans-serif;
@@ -16,142 +12,6 @@
   body {
     background-color: #F2F2CE;
   }
-/*사이드바*/
-/* VARIABLES CSS */
-:root {
-  --nav--width: 250px;
-  /* Colors */
-  --first-color: #F2AA61;
-  --bg-color: #ADCC99;
-  --white-color: #fff;
-
-  /* Font */
-  --body-font: 'Noto Sans KR', sans-serif;
-  --normal-font-size: 1rem;
-  --small-font-size: .875rem;
-
-  /* z index */
-  --z-fixed: 100;
-}
-
-/* BASE */
-*, ::before, ::after {
-    box-sizing: border-box;
-}
-
-body {
-    position: relative;
-    margin: 0;
-    padding: 2rem 0 0 6.75rem;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    transition: .5s;
-}
-
-h1 {
-    margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* l NAV */
-#location {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--nav--width);
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--white-color);
-    padding: 1.5rem 1.5rem 2rem;
-    transition: .5s;
-    z-index: var(--z-fixed);
-}
-
-/* NAV */
-.loc_link:hover {
-    background-color: var(--first-color);
-}
-
-.loc_icon {
-    font-size: 1.25rem;
-    
-}
-
-.loc_name {
-    font-size: var(--small-font-size);
-}
-
-/* Expander menu */
-.expander {
-    width: calc(var(--nav--width) + 9.25rem);
-}
-
-/* Add padding body*/
-.body-pd {
-    padding: 2rem 0 0 16rem;
-}
-
-/* Active links menu */
-.active {
-    background-color: var(--first-color);
-}
-
-/* COLLAPSE */
-.collapse {
-    grid-template-columns: 20px max-content 1fr;
-}
-
-.collapse_link {
-    justify-self: flex-end;
-    transition: .5;
-}
-
-.ku {
-    display: none;
-    padding: .75rem 2.25rem;
-    text-align: start;
-}
-a:link{
- color: white;
- text-decoration: none;
-}
-a:visited{
-  color: white;
-  text-decoration: none;
-}
-a:hover{
-  text-decoration: underline;
-  color: #60735F;
-}
-.collapse_sublink {
-    color: white;
-    font-size: var(--small-font-size);
-  
-}
-
-.collapse_sublink:hover {
-    color: var(--white-color);
-}
-
-/* Show collapse */
-.showCollapse {
-    display: block;
-}
-
-/* Rotate icon */
-.rotate {
-    transform: rotate(180deg);
-    transition: .5s;
-}
 
   /*타이틀*/
   .Title{ /*타이틀 사이즈 및 위치 조정*/
@@ -189,6 +49,101 @@ a:hover{
 }
 
 
+/*사이드 바*/
+.left_side_bar {
+  position: fixed;
+  width: 200px;
+  z-index: 10;
+  background: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  bottom: 50px;
+  height: 100%;
+  margin-bottom: -70px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
+  color: black;
+  overflow: scroll;
+}
+
+.left_side_bar>.Ku li:hover {
+  color: ff5858;
+  background-color: #e1e1e1;
+}
+
+.left_side_bar>.Ku li {
+  color: #333;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 20px 0px 8px 14px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.Ku>h2 {
+  padding-bottom: 4px;
+  border-bottom: 3px solid #797979;
+  margin-top: 30px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #333;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'NotoKrB';
+  line-height: 35px;
+}
+.Ku .fas {
+  color: #ff5858;
+  font-size: 20px;
+  line-height: 20px;
+  float: right;
+  margin-right: 20px;
+}
+
+.Ku>.Ku_list>.Ku li {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 0px solid #e1e1e1;
+  margin-left: 14px;
+  padding-top: 8px;
+}
+.specific_Line{
+  margin: 20px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #333;
+}
+.Ku_list {
+  cursor: pointer;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+a {
+  color: #797979;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.specific_Ku{
+  display: none;
+  padding: .75rem 2.25rem;
+}
+
+
+/*검색*/
 .searchbox{
   display: flex;
   justify-content: center;
