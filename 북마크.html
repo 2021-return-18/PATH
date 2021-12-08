@@ -4,87 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1{
-            font-size: 25pt;
-            padding-bottom: 3%;
-            padding-top: 10%;
-            padding-right: 25%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #content {
-            position: absolute;
-            padding-top: 5%;
-            left: 50%;
-            transform: translate(-50%);
-            width: 500px;
-        }
-
-        .table{
-            align-items: center;
-        }
-
-        th{
-            background-color: lightgray;
-            width: "500";
-            height: auto;
-        }
-
-    </style>
+    <title>북마크</title>
+    <link rel="stylesheet" href="./북마크.css">
 </head>
 <body>
     <div id="wrapper">
         <div id="content">
-            <h1>북마크</h1>
+        <h1>북마크</h1>
+        <div id="content">
             <h2>000님이 북마크한 편의시설입니다!</h2>
-            <psan>총 n개의 편의시설</psan>
-
+            <psan>총 n개의 편의시설</psan><br><br>
             <h2>00구</h2>
+            <div class="result">
             <h3>전동 휠체어 충전소</h3>
-            <table >
+            <table>
                 <th>시설명</th>
                 <th>도로명주소</th>
                 <th>설치 장소 설명</th>
-                <th>편의시설 정보</th>
+                <th style="width:50%">편의시설 정보</th>
                 <tr>
                     <td>정보</td>
                     <td>정보</td>
                     <td>정보</td> 
-                    <td><a href="">자세히 보기</a></td>     /* 팝업 연결 */
+                    <td><ul>
+                        <!-- 쿼리 별 자세히보기 내용 -->
+                        <div>
+                            <span class="no_padding">자세히보기</span>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ul class="ku">
+                                이렇게 적으면 어떻게 나올지 궁금하네요 ㅋ쿼리에선 어떻게 뜰까요:?
+                            </ul>
+                        </div>
+                    </ul></td>
                 </tr>
             </table>
+            </div>
+
+            <div class="result">
             <h3>지하철 리프트</h3>
             <table >
                 <th>시설명</th>
                 <th>도로명주소</th>
                 <th>설치 장소 설명</th>
-                <th>편의시설 정보</th>
+                <th style="width:50%">편의시설 정보</th>
                 <tr>
                     <td>정보</td>
                     <td>정보</td>
                     <td>정보</td> 
-                    <td><a href="">자세히 보기</a></td>
+                    <td>
+                    <ul>
+                        <!-- 구현 -->
+                        <div>
+                            <span class="no_padding">자세히보기</span>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ul class="ku">
+                                이렇게 적으면 어떻게 나올지 궁금하네요 ㅋ쿼리에선 어떻게 뜰까요:?
+                            </ul>
+                        </div>
+                    </ul>
+                    </td>
                 </tr>
             </table>
-
+            </div>
+            
+            <div class="result">
             <h3>육교</h3>
             <table >
                 <th>시설명</th>
                 <th>도로명주소</th>
                 <th>설치 장소 설명</th>
-                <th>편의시설 정보</th>
+                <th style="width:50%">편의시설 정보</th>
                 <tr>
                     <td>정보</td>
                     <td>정보</td>
                     <td>정보</td> 
-                    <td><a href="">자세히 보기</a></td>
+                    <td>
+                    <ul>
+                        <!-- 구현 -->
+                        <div>
+                            <span class="no_padding">자세히보기</span>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ul class="ku">
+                                이렇게 적으면 어떻게 나올지 궁금하네요 ㅋ쿼리에선 어떻게 뜰까요:?
+                            </ul>
+                        </div>
+                    </ul>
+                    </td>
                 </tr>
             </table>
+            </div>
 
         </div>
+        </div>
     </div>
+<!-- ionicons -->
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+<!-- JS -->
+<script src="./북마크js.js"></script>
 </body>
 </html>

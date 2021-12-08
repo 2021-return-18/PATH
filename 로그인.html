@@ -17,9 +17,18 @@
             padding:0;
         }
 
+        #content {
+            position: absolute;
+            padding-top: 5%;
+            left: 50%;
+            transform: translate(-50%);
+            width: 460px;
+        }
+
         body{
             background:var(--body-background-color);
         }
+
         h1{
             font-size: 25pt;
             padding-bottom: 3%;
@@ -75,7 +84,7 @@
     </style>
 </head>
 <body>
-    <section class="login-input-section-wrap">
+    <section class="login-input-section-wrap", id="content">
         <h1>로그인</h1>
         <div class="login-input-wrap">	
             <input placeholder="Username" type="text"></input>
