@@ -161,9 +161,9 @@
 
                         <!-- PW1 -->
                         <div>
-                            <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                            <h3 class="join_title"><label for="pwd1">비밀번호</label></h3>
                             <span class="box int_pass">
-                                <input type="password" id="pswd1" name="pwd1" class="int" maxlength="20">
+                                <input type="password" id="pwd1" name="pwd1" class="int" maxlength="20">
                                 <span id="alertTxt">사용불가</span>
                             </span>
                             <span class="error_next_box"></span>
@@ -171,9 +171,9 @@
 
                         <!-- PW2 -->
                         <div>
-                            <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+                            <h3 class="join_title"><label for="pwd2">비밀번호 재확인</label></h3>
                             <span class="box int_pass_check">
-                                <input type="password" id="pswd2" name="pwd1" class="int" maxlength="20">
+                                <input type="password" id="pwd2" class="int" name="pwd2" maxlength="20">
                             </span>
                             <span class="error_next_box"></span>
                         </div>
@@ -191,33 +191,33 @@
                         <div>
                             <h3 class="join_title"><label for="name">구</label></h3>
                             <span class="box">
-                                <select>
-                                    <option>구</option>
-                                    <option value="01" name="Ku">강남구</option>
-                                    <option value="02" name="Ku">강동구</option>
-                                    <option value="03" name="Ku">강북구</option>
-                                    <option value="04" name="Ku">강서구</option>
-                                    <option value="05" name="Ku">관악구</option>
-                                    <option value="06" name="Ku">광진구</option>
-                                    <option value="07" name="Ku">구로구</option>
-                                    <option value="08" name="Ku">금천구</option>
-                                    <option value="09" name="Ku">노원구</option>                                    
-                                    <option value="10" name="Ku">도봉구</option>
-                                    <option value="11" name="Ku">동대문구</option>
-                                    <option value="12" name="Ku">동작구</option>
-                                    <option value="13" name="Ku">마포구</option>
-                                    <option value="14" name="Ku">서대문구</option>
-                                    <option value="15" name="Ku">서초구</option>
-                                    <option value="16" name="Ku">성동구</option>
-                                    <option value="17" name="Ku">성북구</option>
-                                    <option value="18" name="Ku">송파구</option>
-                                    <option value="19" name="Ku">양천구</option>
-                                    <option value="20" name="Ku">영등포구</option>
-                                    <option value="21" name="Ku">용산구</option>
-                                    <option value="22" name="Ku">은평구</option>
-                                    <option value="23" name="Ku">종로구</option>
-                                    <option value="24" name="Ku">중구</option>
-                                    <option value="25" name="Ku">중랑구</option>
+                                <select name="Ku">
+                                    <option value="">구</option>
+                                    <option value="강남구" >강남구</option>
+                                    <option value="강동구" >강동구</option>
+                                    <option value="강북구" >강북구</option>
+                                    <option value="강서구">강서구</option>
+                                    <option value="관악구" >관악구</option>
+                                    <option value="광진구" >광진구</option>
+                                    <option value="구로구" >구로구</option>
+                                    <option value="금천구">금천구</option>
+                                    <option value="노원구" >노원구</option>                                    
+                                    <option value="도봉구" >도봉구</option>
+                                    <option value="동대문구" >동대문구</option>
+                                    <option value="동작구" >동작구</option>
+                                    <option value="마포구" >마포구</option>
+                                    <option value="서대문구" >서대문구</option>
+                                    <option value="서초구" >서초구</option>
+                                    <option value="성동구">성동구</option>
+                                    <option value="성북구" >성북구</option>
+                                    <option value="송파구" >송파구</option>
+                                    <option value="양천구" >양천구</option>
+                                    <option value="영등포구">영등포구</option>
+                                    <option value="용산구" >용산구</option>
+                                    <option value="은평구" >은평구</option>
+                                    <option value="종로구" >종로구</option>
+                                    <option value="중구" >중구</option>
+                                    <option value="중랑구" >중랑구</option>
 
                                 </select>
                             </span>
@@ -227,18 +227,16 @@
                         <div>
                             <h3 class="join_title"><label for="email">본인확인 이메일</label></h3>
                             <span class="box int_email">
-                                <input type="text" id="email" name="email" class="int" maxlength="100">
+                                <input type="email" id="email" name="email" class="int" maxlength="100">
                             </span>
                             <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
                         </div>
-
-                        <!-- MOBILE -->
                         
                         <!-- JOIN BTN-->
                         <div class="btn_area">
-                            <button type="button" id="btnJoin">
-                                <span>가입하기</span>
-                            </button>
+                            <input type="submit" id="btnJoin" value="가입하기">
+                                
+                            
                     </form>
                 </div>
 

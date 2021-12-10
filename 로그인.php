@@ -56,7 +56,7 @@
         .login-button-wrap {
             padding-top: 13px;
         }
-        .login-button-wrap button{
+        .login-button-wrap input{
             width: 465px;
             height :48px;
             font-size: 18px;
@@ -75,24 +75,26 @@
     </style>
 </head>
 <body>
-    <section class="login-input-section-wrap">
-        <h1>로그인</h1>
-        <div class="login-input-wrap">	
-            <input placeholder="Username" type="text"></input>
-        </div>
-        <div class="login-input-wrap password-wrap">	
-            <input placeholder="Password" type="password"></input>
-        </div>
-        <div class="login-button-wrap">
-            <button>Sign in</button>
-        </div>
-        <div class="lead-to-signup">
-            <a href="./회원가입.html">회원가입</a>
-        </div>
-    </section>
-</body>
-<footer>
+    <form action="Login.php" method="POST">
+        <section class="login-input-section-wrap">
+            <h1>로그인</h1>
+            <div class="login-input-wrap">	
+                <input placeholder="Username" type="text" name="uid"></input>
+            </div>
+            <div class="login-input-wrap password-wrap">	
+                <input placeholder="Password" type="password" name="upwd"></input>
+            </div>
+            <div class="login-button-wrap">
+                <input type="submit" value="Sign in">
+            </div>
+            <div class="lead-to-signup">
+                <a href="회원가입.php">회원가입</a>
+            </div>
+        </section>
+    </body>
+    <footer>
 
-</footer>
+    </footer>
+    </form>
 </html>
 
