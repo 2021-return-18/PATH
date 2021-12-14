@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn=mysqli_connect('localhost','root','root','path');
+$conn=mysqli_connect('127.0.0.1','root','0918','path');
 
     if (isset($_POST['user_id'])&&isset($_POST['userpw'])){
         $user_id=$_POST['user_id'];

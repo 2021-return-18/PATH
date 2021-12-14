@@ -10,13 +10,13 @@
     if($pwd1!=$pwd2){
         echo "<script>alert('비밀번호가 다릅니다')</script>";
         echo "<script> location.replace('./회원가입.php')</script>";
-     
+
         exit();
     }
     //db연동//
-    $host = 'localhost';
+    $host = '127.0.0.1';
     $user = 'root';
-    $pw = 'root';
+    $pw = '0918';
     $dbName = 'path';
     $mysqli = new mysqli($host, $user, $pw, $dbName);
 

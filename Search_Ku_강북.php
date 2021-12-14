@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PATH</title>
-    <link rel="stylesheet" href="./MainPage.css">
+    <link rel="stylesheet" href="./Search_Ku.css">
     <script src="https://kit.fontawesome.com/c881082b49.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./jquery.min.js"></script>
-<script type="text/javascript" src="./Chart.min.js"></script>
+
 </head>
-<body id=body-pd>
-    <?php
+<body>
+<?php
     $conn=mysqli_connect('127.0.0.1','root','0918','path');
     session_start();
     ?>
-    <div class="top">
+    <!-- php연동 -->
+    <?php
+    // $servername = "localhost:3306";
+    $servername = "127.0.0.1";
+    $username = "root";
+    $password = "0918";
+    $dbname = "Path";
+    ?>
 
+    <div class="top">
         <div class="Title">
         PATH
         </div>
@@ -25,14 +31,14 @@
             <?php
             if(isset($_SESSION['user_id'])) {
             ?>
-                 <button type="button" aria-label="Logout" class="Login-button" onClick="location.href='Logout.php'">
+                <button type="button" aria-label="Logout" class="Login-button" onClick="location.href='Logout.php'">
                 Logout
                 </button>
 
         <?php
             }
             else{
-         
+
         ?>
         <button type="button" aria-label="Login" class="Login-button" onClick="location.href='로그인.php'">
                 Login
@@ -41,11 +47,11 @@
             }
         ?>
         </div>
-
     </div>
     <div class="topbar" style="position: absolute; top:0;">
         
         <!-- 왼쪽 서브 메뉴 -->
+        <!-- 잠시 사이드메뉴 접어놓기 -->
         <div class="left_side_bar">
             <div class="Ku">
                 <h2>구별 검색</h2>
@@ -139,22 +145,132 @@
     </div>
     </div>
 
-    <!-- 날리기 -->
-    <!-- 여기에 채우기 -->
 
-<script>
-    $(function () {
-   
-        // 왼쪽메뉴 드롭다운
-        $(".Ku ul.specific_ku").hide();
-        $(".Ku ul.Ku_list").click(function () {
-            $("ul", this).slideToggle(300);
+    <!-- 라디오 버튼 클릭시 출력되도록 -->
+
+    <div class="sort">
+    <form>
+        <h1><p>검색을 원하는 편의시설을 선택해 주세요</p></h1>
+        <label>
+        <input type="radio" id="r_overpass"  name="sort" value="overpass" >
+        육교
+        </label>
+        <label><input type="radio" id="r_charge" name="sort" value="charge">
+        충전소</label>
+    </div>
+    
+    <div class="searchbox_o" id="searchbox_o">
+        <table border="1">
+            <tr>
+                <th>육교 이름</th>
+                <th>육교 주소</th>
+                <th>편의시설 종류</th>
+                <th>편의시설 수</th>
+                <th>즐겨찾기</th>
+            </tr>
+            <?php
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                
+                if($conn->connect_error){
+                    die("접속실패: ". $conn->connect_error);
+                }else{
+                    // echo "성공";
+                }
+
+                //////////여기가 sql
+                $sql="select * from overpass where O_address like '%강북%'";
+
+                $result = mysqli_query($conn, $sql);
+                
+                if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)) { //이름을 키값으로
+                    echo "<tr>";
+                    echo "<td>".$row["O_name"]."</td>";
+                    echo "<td>".$row['O_address']."</td>";
+                    echo "<td>".$row['convenience_sort']."</td>";
+                    echo "<td>".$row['convenience_num']."</td>";
+                    echo "<td><input type='button' value='저장' onclick='check()'/></td>";
+                    echo "</tr>";
+                }
+                }else{
+                    echo "비정상";
+                }
+            ?>
+        </table>
+    </div>
+
+    <div class="searchbox_c" id="searchbox_c" >
+    <table border="1">
+            <tr>
+                <th>충전소 이름</th>
+                <th>충전소 주소</th>
+                <th>충전소 설명</th>
+                <th>동시 사용 가능 대수</th>
+                <th>즐겨찾기</th>
+            </tr>
+
+            <?php
+                //////////여기가 sql
+                $sql2="select *
+                from wc_convenience as c, wc_conv_info as i
+                where (c.WC_number = i.WC_number) and (i.WC_address like '%강북%');";
+
+                
+                $result = mysqli_query($conn, $sql2);
+                
+                if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_array($result)) { //이름을 키값으로
+                    echo "<tr>";
+                    echo "<td>".$row["WC_name"]."</td>";
+                    echo "<td>".$row['WC_address']."</td>";
+                    echo "<td>".$row['Explanation']."</td>";
+                    echo "<td>".$row['simultaneously_use_num']."</td>";
+                    echo "<td><input type='button' value='저장' onclick='check()'/></td>";
+                    echo "</tr>";
+                }
+                }else{
+                    mysqli_error($conn);
+                    echo "비정상";
+                }
+            ?>
+        </table>
+    </div>          
+    <script>
+        $('#r_overpass').click(function() {
+            $("#searchbox_c").hide();
+            $("#searchbox_o").show();
+            
+            // goodsBtn을 클릭하면 goodsDiv를 보여줘라
+        
+        })
+
+        $('#r_charge').click(function() {
+            $("#searchbox_o").hide();
+            $("#searchbox_c").show();
+            // goodsBtn을 클릭하면 goodsDiv를 숨겨라
+        
+        })
+    </script>
+
+    
+    <!-- IONICONS -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!-- JS -->
+    <script src="./Search.js"></script>
+    <script src="./Search_Ku.js"></script>
+
+    <script>
+        $(function () {
+            // 왼쪽메뉴 드롭다운
+            $(".Ku ul.specific_ku").hide();
+            $(".Ku ul.Ku_list").click(function () {
+                $("ul", this).slideToggle(300);
+            });
+            // 외부 클릭 시 좌측 사이드 메뉴 숨기기
+            $('.overlay').on('click', function () {
+                $('.left_sub_menu').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
         });
-        // 외부 클릭 시 좌측 사이드 메뉴 숨기기
-        $('.overlay').on('click', function () {
-            $('.left_sub_menu').fadeOut();
-            $('.hide_sidemenu').fadeIn();
-        });
-    });
-</script>
+    </script>
 </body>
