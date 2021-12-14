@@ -13,6 +13,13 @@
     background-color: #F2F2CE;
   }
 
+  .wrapper {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+  }
+
   /*타이틀*/
   .Title{ /*타이틀 사이즈 및 위치 조정*/
     text-align: center;
@@ -142,12 +149,19 @@ ul {
   padding: .75rem 2.25rem;
 }
 
+th, td{
+  text-align: center;
+}
 
 /*검색*/
 .searchbox{
-  display: flex;
+  display: block;
+  -webkit-flex-direction: column; flex-direction: column;
   justify-content: center;
   margin: 50px;
+}
+h1{
+  display: block;
 }
 .sort{
     display: flex;
@@ -194,6 +208,7 @@ ul {
   width: 750px ;
   height: 500px;
 }
+
 
 /*반응형으로 만들기*/
 @media  (max-width:500px) {
