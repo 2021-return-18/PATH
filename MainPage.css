@@ -143,49 +143,10 @@ ul {
 }
 
 
-/*검색*/
-.searchbox{
-  display: flex;
-  justify-content: center;
-  margin: 50px;
-}
-
-.search{
-  font-size: 16px;
-  width: 600px;
-  height: 50px;
-  padding: 10px;
-  border: 0px;
-  outline: none;
-  float: left;
-}
-.search_button{
-  background-color:#8C8988;
-  color: #F2F0F0;
-  width: 70px;
-  height: 50px;
-  border: 0px;
-  outline: none;
-
-}
-
-.statics{
-  position: relative;
-  margin: auto;
-  background-color: #ADCC99;
-  color: black;
-  width: 800px;
-  height: 500px;
-}
-
-#chart1{
-  width: 750px ;
-  height: 500px;
-}
 
 /*반응형으로 만들기*/
 @media  (max-width:500px) {
-  .searchbox{
+  .img{
     width: 400px;
 
   }

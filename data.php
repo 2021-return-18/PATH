@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$conn = mysqli_connect("localhost","root","root","path");
+$conn = mysqli_connect("127.0.0.1","root","0918","path");
 
 $sqlQuery = "SELECT district,population FROM statics ORDER BY district";
 
