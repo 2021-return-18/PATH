@@ -79,10 +79,10 @@
         <section class="login-input-section-wrap">
             <h1>로그인</h1>
             <div class="login-input-wrap">	
-                <input placeholder="Username" type="text" name="uid"></input>
+                <input placeholder="Username" type="text" name="user_id"></input>
             </div>
             <div class="login-input-wrap password-wrap">	
-                <input placeholder="Password" type="password" name="upwd"></input>
+                <input placeholder="Password" type="password" name="userpw"></input>
             </div>
             <div class="login-button-wrap">
                 <input type="submit" value="Sign in">

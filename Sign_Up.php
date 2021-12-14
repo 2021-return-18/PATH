@@ -30,11 +30,13 @@
 
     $sql = "insert into user (user_id, user_name, email, user_district ,password)";
     $sql = $sql. "values('$user_id','$user_name','$email','$Ku','$pwd1')";
+    $query="UPDATE statics SET population = population + 1 WHERE district='$Ku'";
     if($mysqli->query($sql)){
+        $mysqli->query($query); 
         echo "<script> 
             alert('회원가입을 완료하였습니다.');
         </script>";
-        echo "<script> location.replace('./MainPage.html')</script>";
+        echo "<script> location.replace('./Main.php')</script>";
 
         
     }else{
