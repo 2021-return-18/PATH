@@ -160,13 +160,12 @@
     </div>
     
     <div class="searchbox_o" id="searchbox_o">
-        <table border="1">
+        <table>
             <tr>
                 <th>육교 이름</th>
                 <th>육교 주소</th>
                 <th>편의시설 종류</th>
                 <th>편의시설 수</th>
-                <th>즐겨찾기</th>
             </tr>
             <?php
                 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -189,24 +188,22 @@
                     echo "<td>".$row['O_address']."</td>";
                     echo "<td>".$row['convenience_sort']."</td>";
                     echo "<td>".$row['convenience_num']."</td>";
-                    echo "<td><input type='button' value='저장' onclick='check()'/></td>";
                     echo "</tr>";
                 }
                 }else{
-                    echo "비정상";
+                    //echo "비정상";
                 }
             ?>
         </table>
     </div>
 
     <div class="searchbox_c" id="searchbox_c" >
-    <table border="1">
+    <table>
             <tr>
                 <th>충전소 이름</th>
                 <th>충전소 주소</th>
                 <th>충전소 설명</th>
                 <th>동시 사용 가능 대수</th>
-                <th>즐겨찾기</th>
             </tr>
 
             <?php
@@ -225,12 +222,11 @@
                     echo "<td>".$row['WC_address']."</td>";
                     echo "<td>".$row['Explanation']."</td>";
                     echo "<td>".$row['simultaneously_use_num']."</td>";
-                    echo "<td><input type='button' value='저장' onclick='check()'/></td>";
                     echo "</tr>";
                 }
                 }else{
                     mysqli_error($conn);
-                    echo "비정상";
+                   // echo "비정상";
                 }
             ?>
         </table>

@@ -10,7 +10,8 @@
 </head>
 <body>
 <?php
-    $conn=mysqli_connect('localhost','root','root','path');
+    $conn=mysqli_connect('127.0.0.1','root','0918','Path');
+
     session_start();
     ?>
     <div class="top">
@@ -22,14 +23,14 @@
             <?php
             if(isset($_SESSION['user_id'])) {
             ?>
-                 <button type="button" aria-label="Logout" class="Login-button" onClick="location.href='Logout.php'">
+                <button type="button" aria-label="Logout" class="Login-button" onClick="location.href='Logout.php'">
                 Logout
                 </button>
 
         <?php
             }
             else{
-         
+        
         ?>
         <button type="button" aria-label="Login" class="Login-button" onClick="location.href='로그인.php'">
                 Login
@@ -140,7 +141,7 @@
     <div>
     <h1> 9호선 조회 결과 </h1>
     <?php
-        $conn = new mysqli("localhost", "root", "root", "path") or die("MySQL 접속 실패");
+        $conn = new mysqli("127.0.0.1", "root", "0918", "path") or die("MySQL 접속 실패");
 
         $sql = "select s_line, s_name, enter_num, s_position, start_floor, end_floor from lift where s_line = '9호선'";
 
@@ -154,9 +155,9 @@
             exit();
         }
 
-        echo "<TABLE border=1 width=1000px>";
+        echo "<TABLE width=1000px>";
         echo "<TR>";
-        echo "<th>호선</th><th>역 이름</th><th>출입구 번호</th><th>상세 위치</th><th>시작 층</th><th>종료 층</th><th>북마크</th>";
+        echo "<th>호선</th><th>역 이름</th><th>출입구 번호</th><th>상세 위치</th><th>시작 층</th><th>종료 층</th>";
         echo "</tr>";
         while($row = mysqli_fetch_array($ret)){
             echo "<tr>";
@@ -166,7 +167,6 @@
             echo "<td>", $row['s_position'], "</td>";
             echo "<td>", $row['start_floor'], "</td>";
             echo "<td>", $row['end_floor'], "</td>";
-            echo "<td><input type='button' value='저장' onclick='check()' /></td>";
             echo "</tr>";
         }
 
@@ -182,7 +182,7 @@
 <script src="./Search.js"></script>
 <script>
     $(function () {
-   
+    
         // 왼쪽메뉴 드롭다운
         $(".Ku ul.specific_ku").hide();
         $(".Ku ul.Ku_list").click(function () {
