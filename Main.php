@@ -1,6 +1,3 @@
-<?php
-    include 'Login_check.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,31 +8,40 @@
     <script src="https://kit.fontawesome.com/c881082b49.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./Chart.min.js"></script>
 </head>
 <body id=body-pd>
+    <?php
+    $conn=mysqli_connect('localhost','root','root','path');
+    session_start();
+    ?>
     <div class="top">
 
         <div class="Title">
         PATH
         </div>
         <div class="Login">
-        <?php
-            if ( $log_check ) {
-        ?>
-            <button type="button" aria-label="Login" class="Login-button" onClick="location.href='로그인.php'">
-                Login
-            </button>
+            <?php
+            if(isset($_SESSION['user_id'])) {
+            ?>
+                 <button type="button" aria-label="Logout" class="Login-button" onClick="location.href='Logout.php'">
+                Logout
+                </button>
+
         <?php
             }
             else{
+         
         ?>
-        <button type="button" aria-label="Login" class="Login-button" onClick="location.href='Main.php'">
-                Logout
+        <button type="button" aria-label="Login" class="Login-button" onClick="location.href='로그인.php'">
+                Login
         </button>
-        </div>
         <?php
             }
         ?>
+        </div>
+
     </div>
     <div class="topbar" style="position: absolute; top:0;">
         
@@ -140,15 +146,56 @@
         <input onkeyup="filter()" type="text" class="search" placeholder="Type to Search">
         <input type="button" class='search_button' value="검색" onclick="myFunction()"/>
     </div>
-
+    
+<!--통계-->
     <div class=statics>
-    <canvas id="chart1"  ></canvas>
+    <canvas id="graphCanvas"></canvas>
     </div>
+    <script>
+        $(document).ready(function () {
+        showGraph();
+    });
 
-<!-- IONICONS -->
-<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-<!-- JS -->
-<script src="./MainPage.js"></script>
+
+    function showGraph()
+    {
+        {
+            $.post("data.php",
+            function (data)
+            {
+                console.log(data);
+                var district= [];
+                var population = [];
+
+                for (var i in data) {
+                    district.push(data[i].district);
+                    population.push(data[i].population);
+                }
+
+                var chartdata = {
+                    labels: district,
+                    datasets: [
+                        {
+                            label: 'population',
+                            backgroundColor: 'white',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: population
+                        }
+                    ]
+                };
+
+                var graphTarget = $("#graphCanvas");
+
+                var barGraph = new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata
+                });
+            });
+        }
+    }
+</script>
+
 <script>
     $(function () {
    
